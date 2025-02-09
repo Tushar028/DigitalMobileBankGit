@@ -40,23 +40,23 @@ class AccountServiceImplTest {
 	@Test 
 	public void createAccountTest(){
 		BankAccountDTO bankDTO = getAccount();
-//		BankAccount bankAcc = new BankAccount();
-//		bankAcc.setAccountNumber(bankDTO.getAccountNumber());
-//		bankAcc.setAccountType(bankDTO.getAccountType());
-//		bankAcc.setBalance(bankDTO.getBalance());
-//		bankAcc.setBankName(bankDTO.getBankName());
-//		bankAcc.setIfscCode(bankDTO.getIfscCode());
-//		bankAcc.setMobileNumber(bankDTO.getMobileNumber());
-//		bankAcc.setOpeningDate(bankDTO.getOpeningDate());
+		BankAccount bankAcc = new BankAccount();
+		bankAcc.setAccountNumber(bankDTO.getAccountNumber());
+		bankAcc.setAccountType(bankDTO.getAccountType());
+		bankAcc.setBalance(bankDTO.getBalance());
+		bankAcc.setBankName(bankDTO.getBankName());
+		bankAcc.setIfscCode(bankDTO.getIfscCode());
+		bankAcc.setMobileNumber(bankDTO.getMobileNumber());
+		bankAcc.setOpeningDate(bankDTO.getOpeningDate());
 		
 		when(accRepo.save(any(BankAccount.class))).thenReturn(null);
 		assertEquals("Account Successfully Created!!", accountServiceImpl.createAccount(bankDTO));
 	}
 
 	private BankAccountDTO getAccount() {
-		// TODO Auto-generated method stub
-		
-		// do the same with builder 
+//		// TODO Auto-generated method stub
+//		
+//		// do the same with builder 
 		BankAccountDTO bankDTO1 = new BankAccountDTO();
 		bankDTO1.setAccountNumber(7848383929L);
 		bankDTO1.setAccountType("salary");
@@ -85,7 +85,7 @@ class AccountServiceImplTest {
 			bDTO.setOpeningDate(b.getOpeningDate());
 			l.add(bDTO);
 		}
-		
+//		
 		assertEquals(l.get(0).getBankName(), "icici");
 	}
 
